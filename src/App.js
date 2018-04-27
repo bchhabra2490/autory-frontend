@@ -81,7 +81,7 @@ class App extends Component {
     let notifications = [];
 
     const notif = (this.state.notifications || []).map((notif,i)=>{
-        notifications.push((<Table.Row key={i}><Table.Cell textAlign={"center"}>{notif.details}</Table.Cell><Table.Cell><Dropdown id={`dd${i}`} placeholder='Select Reason' selection options={this.state.reasons} onChange={this.handleChange} /></Table.Cell><Table.Cell><Button onClick={()=>this.submitReason(notif.id,i,notif.machine_id)}> Submit </Button></Table.Cell></Table.Row>));
+        notifications.push((<Table.Row key={i}><Table.Cell textAlign={"center"}>{notif.details}</Table.Cell><Table.Cell textAlign={"center"}>{notif.date.split('T')[0]} {notif.date.split('T')[1].split('Z')[0]}</Table.Cell><Table.Cell><Dropdown id={`dd${i}`} placeholder='Select Reason' selection options={this.state.reasons} onChange={this.handleChange} /></Table.Cell><Table.Cell><Button onClick={()=>this.submitReason(notif.id,i,notif.machine_id)}> Submit </Button></Table.Cell></Table.Row>));
     });
 
     return (
@@ -94,6 +94,7 @@ class App extends Component {
                   <Table celled>
                       <Table.Header>
                           <Table.Row>
+                              <Table.HeaderCell textAlign={"center"} >Details</Table.HeaderCell>
                               <Table.HeaderCell textAlign={"center"} >Details</Table.HeaderCell>
                               <Table.HeaderCell textAlign={"center"}>Reason</Table.HeaderCell>
                               <Table.HeaderCell textAlign={"center"}>Submit</Table.HeaderCell>
