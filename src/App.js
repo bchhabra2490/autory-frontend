@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import {Grid, Dropdown, Table, Button} from 'semantic-ui-react';
+import {Grid, Dropdown, Table, Button, Input} from 'semantic-ui-react';
 
 
 class App extends Component {
@@ -87,7 +87,11 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to Autory</h1>
+          <h1 className="App-title">Idle Time Categorisation</h1>
+            <div>
+                <Input placeholder={"Update Threshold"}/>
+                <Button primary>Update</Button>
+            </div>
         </header>
           <Grid columns={2}>
               <Grid.Row>
@@ -95,7 +99,7 @@ class App extends Component {
                       <Table.Header>
                           <Table.Row>
                               <Table.HeaderCell textAlign={"center"} >Details</Table.HeaderCell>
-                              <Table.HeaderCell textAlign={"center"} >Details</Table.HeaderCell>
+                              <Table.HeaderCell textAlign={"center"} >Time</Table.HeaderCell>
                               <Table.HeaderCell textAlign={"center"}>Reason</Table.HeaderCell>
                               <Table.HeaderCell textAlign={"center"}>Submit</Table.HeaderCell>
                           </Table.Row>
